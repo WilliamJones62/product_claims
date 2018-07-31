@@ -1,0 +1,43 @@
+<h1>Show Product Claim</h1>
+<p id="notice"><%= notice %></p>
+
+<fieldset>
+  <legend><strong>Detail</strong></legend>
+  <p>
+    <strong>Supermarket:</strong>
+    <%= @product_claim.supermarket %>&emsp;&emsp;
+    <strong>Category:</strong>
+    <%= @product_claim.category %>&emsp;&emsp;
+    <strong>Brand:</strong>
+    <%= @product_claim.brand %>&emsp;&emsp;
+    <strong>Description:</strong>
+    <%= @product_claim.description %>
+  </p>
+</fieldset>
+<p>
+</p>
+
+<fieldset>
+  <legend><strong>Claims</strong></legend>
+  <p>
+    <strong>ABF?:</strong>
+    <%= human_boolean( @product_claim.abf) %>&emsp;&emsp;
+    <strong>Organic?:</strong>
+    <%= human_boolean( @product_claim.organic) %>&emsp;&emsp;
+    <strong>Grassfed/free range?:</strong>
+    <%= human_boolean( @product_claim.grassfed) %>&emsp;&emsp;
+    <strong>Never ever?:</strong>
+    <%= human_boolean( @product_claim.never) %>&emsp;&emsp;
+    <strong>Humane?:</strong>
+    <%= human_boolean( @product_claim.humane) %>
+  </p>
+</fieldset>
+<p>
+</p>
+<p>
+  <strong>Promotion?:</strong>
+  <%= human_boolean( @product_claim.promo) %>
+</p>
+
+<%= link_to 'Edit', edit_product_claim_path(@product_claim) %>
+<%= link_to 'Back', product_claims_path %>

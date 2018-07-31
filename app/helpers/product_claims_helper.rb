@@ -1,0 +1,2 @@
+module ProductClaimsHelper
+end

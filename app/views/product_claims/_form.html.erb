@@ -1,0 +1,72 @@
+<%= form_with(model: product_claim, local: true) do |form| %>
+  <% if product_claim.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product_claim.errors.count, "error") %> prohibited this product_claim from being saved:</h2>
+
+      <ul>
+      <% product_claim.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend><strong>Details</strong></legend>
+    <p>
+      <table>
+        <thead>
+          <tr>
+            <th> <%= form.label :supermarket %> </th>
+            <th> <%= form.label :category %> </th>
+            <th> <%= form.label :brand %> </th>
+            <th> <%= form.label :description %> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= form.select :supermarket, @supermarket, {}, {:value => params[:supermarket]} %> </td>
+            <td> <%= form.select :category, @category, {}, {:value => params[:category]} %> </td>
+            <td> <%= form.text_field :brand, id: :product_claim_brand %> </td>
+            <td> <%= form.text_field :description, id: :product_claim_description %> </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend><strong>Claims</strong></legend>
+    <p>
+      <table>
+        <thead>
+          <tr>
+            <th> <%= form.label :abf, 'ABF' %> </th>
+            <th> <%= form.label :organic %> </th>
+            <th> <%= form.label :grassfed, 'Grassfed/free range' %> </th>
+            <th> <%= form.label :never %> </th>
+            <th> <%= form.label :humane %> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= form.check_box :abf, id: :product_claim_abf %> </td>
+            <td> <%= form.check_box :organic, id: :product_claim_organic %> </td>
+            <td> <%= form.check_box :grassfed, id: :product_claim_grassfed %> </td>
+            <td> <%= form.check_box :never, id: :product_claim_never %> </td>
+            <td> <%= form.check_box :humane, id: :product_claim_humane %> </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+  </fieldset>
+
+  <div class="field">
+    <%= form.label :promo %>
+    <%= form.check_box :promo, id: :product_claim_promo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

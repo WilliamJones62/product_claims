@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  supermarket: MyString
+  category: MyString
+  brand: MyString
+  description: MyString
+  abf: false
+  organic: false
+  grassfed: false
+  never: false
+  humane: false
+  promo: false
+
+two:
+  supermarket: MyString
+  category: MyString
+  brand: MyString
+  description: MyString
+  abf: false
+  organic: false
+  grassfed: false
+  never: false
+  humane: false
+  promo: false

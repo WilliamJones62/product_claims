@@ -1,0 +1,2 @@
+class ProductClaim < ApplicationRecord
+end

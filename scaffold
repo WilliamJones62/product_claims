@@ -1,0 +1,1 @@
+rails g scaffold Product_claim supermarket:string category:string brand:string description:string abf:boolean organic:boolean grassfed:boolean never:boolean humane:boolean promo:boolean

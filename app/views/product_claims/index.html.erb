@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Product Claims</h1>
+
+<table id="normal_dt"  class="stripe" class="mytable" class="display" cellspacing="0" >
+  <thead>
+    <tr>
+      <th>Supermarket</th>
+      <th>Category</th>
+      <th>Brand</th>
+      <th>Description</th>
+      <th>Promo</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @product_claims.each do |product_claim| %>
+      <tr>
+        <td><%= product_claim.supermarket %></td>
+        <td><%= product_claim.category %></td>
+        <td><%= product_claim.brand %></td>
+        <td><%= product_claim.description %></td>
+        <td> <%= human_boolean(product_claim.promo) %> </td>
+        <td><%= link_to 'Show', product_claim %></td>
+        <td><%= link_to 'Edit', edit_product_claim_path(product_claim) %></td>
+        <td><%= link_to 'Delete', product_claim, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_claim_path %>
