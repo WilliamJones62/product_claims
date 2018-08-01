@@ -23,6 +23,7 @@ class ProductClaimsController < ApplicationController
   # POST /product_claims
   def create
     @product_claim = ProductClaim.new(product_claim_params)
+    @product_claim.user_id = current_user.id
 
     respond_to do |format|
       if @product_claim.save
@@ -65,6 +66,6 @@ class ProductClaimsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_claim_params
-      params.require(:product_claim).permit(:supermarket, :category, :brand, :description, :abf, :organic, :grassfed, :never, :humane, :promo)
+      params.require(:product_claim).permit(:user_id, :supermarket, :category, :brand, :description, :abf, :organic, :grassfed, :never, :humane, :promo)
     end
 end

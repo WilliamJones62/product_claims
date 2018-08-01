@@ -25,8 +25,8 @@
         </thead>
         <tbody>
           <tr>
-            <td> <%= form.select :supermarket, @supermarket, {}, {:value => params[:supermarket]} %> </td>
-            <td> <%= form.select :category, @category, {}, {:value => params[:category]} %> </td>
+            <td> <%= form.select :supermarket, @supermarket, {}, {:value => params[:supermarket], id: :product_claim_supermarket} %> </td>
+            <td> <%= form.select :category, @category, {}, {:value => params[:category], id: :product_claim_category} %> </td>
             <td> <%= form.text_field :brand, id: :product_claim_brand %> </td>
             <td> <%= form.text_field :description, id: :product_claim_description %> </td>
           </tr>
