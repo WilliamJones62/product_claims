@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_claims_id: 1
+  image: 
+
+two:
+  product_claims_id: 1
+  image: 

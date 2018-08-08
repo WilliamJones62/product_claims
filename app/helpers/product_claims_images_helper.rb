@@ -1,0 +1,2 @@
+module ProductClaimsImagesHelper
+end

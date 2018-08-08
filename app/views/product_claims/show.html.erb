@@ -11,7 +11,9 @@
     <strong>Brand:</strong>
     <%= @product_claim.brand %>&emsp;&emsp;
     <strong>Description:</strong>
-    <%= @product_claim.description %>
+    <%= @product_claim.description %>&emsp;&emsp;
+    <strong>Expiration date:</strong>
+    <%= display_date(@product_claim.expiration_date) %>
   </p>
 </fieldset>
 <p>
@@ -37,6 +39,14 @@
 <p>
   <strong>Promotion?:</strong>
   <%= human_boolean( @product_claim.promo) %>
+</p>
+<p>
+</p>
+<p>
+  <strong>Image:</strong>
+  <% if @product_claim.image.url %>
+    <%= image_tag(@product_claim.image.url, size: "300x200") %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_product_claim_path(@product_claim) %>

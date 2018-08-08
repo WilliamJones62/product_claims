@@ -1,4 +1,4 @@
-<%= form_with(model: product_claim, local: true) do |form| %>
+<%= form_with(model: product_claim, local: true, html: { multipart: true }) do |form| %>
   <% if product_claim.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(product_claim.errors.count, "error") %> prohibited this product_claim from being saved:</h2>
@@ -21,6 +21,7 @@
             <th> <%= form.label :category %> </th>
             <th> <%= form.label :brand %> </th>
             <th> <%= form.label :description %> </th>
+            <th> <%= form.label :expiration_date %> </th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +30,7 @@
             <td> <%= form.select :category, @category, {}, {:value => params[:category], id: :product_claim_category} %> </td>
             <td> <%= form.text_field :brand, id: :product_claim_brand %> </td>
             <td> <%= form.text_field :description, id: :product_claim_description %> </td>
+            <td> <%= form.date_field :expiration_date, id: :product_claim_expiration_date %> </td>
           </tr>
         </tbody>
       </table>
@@ -64,6 +66,11 @@
   <div class="field">
     <%= form.label :promo %>
     <%= form.check_box :promo, id: :product_claim_promo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :product_claim_image %>
   </div>
 
   <div class="actions">

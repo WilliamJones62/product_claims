@@ -66,6 +66,6 @@ class ProductClaimsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_claim_params
-      params.require(:product_claim).permit(:user_id, :supermarket, :category, :brand, :description, :abf, :organic, :grassfed, :never, :humane, :promo)
+      params.require(:product_claim).permit(:user_id, :supermarket, :category, :brand, :description, :abf, :organic, :grassfed, :never, :humane, :promo, :expiration_date, :image)
     end
 end
