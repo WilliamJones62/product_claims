@@ -1,53 +1,31 @@
-<h1>Show Product Claim</h1>
 <p id="notice"><%= notice %></p>
 
-<fieldset>
-  <legend><strong>Detail</strong></legend>
-  <p>
     <strong>Supermarket:</strong>
-    <%= @product_claim.supermarket %>&emsp;&emsp;
+    <%= @product_claim.supermarket %>&emsp;
     <strong>Category:</strong>
-    <%= @product_claim.category %>&emsp;&emsp;
+    <%= @product_claim.category %>&emsp;
     <strong>Brand:</strong>
-    <%= @product_claim.brand %>&emsp;&emsp;
+    <%= @product_claim.brand %>&emsp;
     <strong>Description:</strong>
-    <%= @product_claim.description %>&emsp;&emsp;
+    <%= @product_claim.description %>&emsp;
     <strong>Expiration date:</strong>
     <%= display_date(@product_claim.expiration_date) %>
-  </p>
-</fieldset>
-<p>
-</p>
-
-<fieldset>
-  <legend><strong>Claims</strong></legend>
-  <p>
+    <br>
     <strong>ABF?:</strong>
-    <%= human_boolean( @product_claim.abf) %>&emsp;&emsp;
+    <%= human_boolean( @product_claim.abf) %>&emsp;
     <strong>Organic?:</strong>
-    <%= human_boolean( @product_claim.organic) %>&emsp;&emsp;
-    <strong>Grassfed/free range?:</strong>
-    <%= human_boolean( @product_claim.grassfed) %>&emsp;&emsp;
+    <%= human_boolean( @product_claim.organic) %>&emsp;
+    <strong>Free range?:</strong>
+    <%= human_boolean( @product_claim.grassfed) %>&emsp;
     <strong>Never ever?:</strong>
-    <%= human_boolean( @product_claim.never) %>&emsp;&emsp;
+    <%= human_boolean( @product_claim.never) %>&emsp;
     <strong>Humane?:</strong>
-    <%= human_boolean( @product_claim.humane) %>
-  </p>
-</fieldset>
-<p>
-</p>
-<p>
-  <strong>Promotion?:</strong>
-  <%= human_boolean( @product_claim.promo) %>
-</p>
-<p>
-</p>
-<p>
-  <strong>Image:</strong>
-  <% if @product_claim.image.url %>
-    <%= image_tag(@product_claim.image.url, size: "300x200") %>
-  <% end %>
-</p>
+    <%= human_boolean( @product_claim.humane) %>&emsp;
+    <strong>Promotion?:</strong>
+    <%= human_boolean( @product_claim.promo) %>&emsp;
+    <strong>Image:</strong>
+    <% if @product_claim.image.url %>
+      <%= image_tag(@product_claim.image.url, size: "300x200") %>
+    <% end %>
 
-<%= link_to 'Edit', edit_product_claim_path(@product_claim) %>
-<%= link_to 'Back', product_claims_path %>
+</p>
