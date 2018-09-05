@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180806191031) do
+ActiveRecord::Schema.define(version: 20180829125856) do
 
   create_table "product_claims", force: :cascade do |t|
     t.string "supermarket"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180806191031) do
     t.integer "user_id"
     t.date "expiration_date"
     t.string "image"
+    t.float "price"
   end
 
   create_table "product_claims_images", force: :cascade do |t|

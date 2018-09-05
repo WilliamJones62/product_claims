@@ -19,15 +19,17 @@
         <th> <%= form.label :brand %> </th>
         <th> <%= form.label :description %> </th>
         <th> <%= form.label :expiration_date %> </th>
+        <th> <%= form.label :price, 'Price per Lb' %> </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td> <%= form.select :supermarket, @supermarket, {}, {:value => params[:supermarket], id: :product_claim_supermarket} %> </td>
         <td> <%= form.select :category, @category, {}, {:value => params[:category], id: :product_claim_category} %> </td>
-        <td> <%= form.text_field :brand, id: :product_claim_brand %> </td>
+        <td> <%= form.text_field :brand, size: 10, id: :product_claim_brand %> </td>
         <td> <%= form.text_field :description, id: :product_claim_description %> </td>
         <td> <%= form.date_field :expiration_date, id: :product_claim_expiration_date %> </td>
+        <td> <%= form.number_field :price, id: :product_claim_price, :step => 0.01 %> </td>
       </tr>
     </tbody>
   </table>
@@ -55,6 +57,14 @@
       </tr>
     </tbody>
   </table>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
   <div class="actions">
     <%= form.submit %>

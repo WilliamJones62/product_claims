@@ -9,7 +9,9 @@
     <strong>Description:</strong>
     <%= @product_claim.description %>&emsp;
     <strong>Expiration date:</strong>
-    <%= display_date(@product_claim.expiration_date) %>
+    <%= display_date(@product_claim.expiration_date) %>&emsp;
+    <strong>Price per Lb:</strong>
+    <%= @product_claim.price %>
     <br>
     <strong>ABF?:</strong>
     <%= human_boolean( @product_claim.abf) %>&emsp;

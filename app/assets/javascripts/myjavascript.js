@@ -7,16 +7,6 @@
       autoWidth: true,
       responsive: true,
       retrieve: true,
-      dom: 'Bfrtip',
-      buttons: [
-        {
-        extend: 'print',
-        }
-      ]
-    });
-
-    $("#btnPrint").printPreview({
-      obj2print:'#main'
     });
 
   });

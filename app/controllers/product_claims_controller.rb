@@ -1,6 +1,7 @@
 class ProductClaimsController < ApplicationController
   before_action :set_product_claim, only: [:show, :edit, :update, :destroy]
   before_action :set_dropdowns, only: [:new, :edit]
+  before_action :set_header, only: [:new, :edit, :index, :show]
 
   # GET /product_claims
   def index
@@ -53,6 +54,10 @@ class ProductClaimsController < ApplicationController
     end
   end
 
+  def hide
+    @show_header = false
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product_claim
@@ -64,8 +69,12 @@ class ProductClaimsController < ApplicationController
       @category = ['CHICKEN', 'BEEF', 'PORK']
     end
 
+    def set_header
+      @show_header = true
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_claim_params
-      params.require(:product_claim).permit(:user_id, :supermarket, :category, :brand, :description, :abf, :organic, :grassfed, :never, :humane, :promo, :expiration_date, :image)
+      params.require(:product_claim).permit(:user_id, :supermarket, :category, :brand, :description, :abf, :organic, :grassfed, :never, :humane, :promo, :expiration_date, :image, :price)
     end
 end
